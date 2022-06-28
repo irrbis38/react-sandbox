@@ -1,73 +1,73 @@
-/** Functions */
+/* Module 4: Develop typed functions using TypeScript
+   Lab Start  */
 
-function displayAlert(message: string): void {
-  alert("The message is " + message);
-}
+/*  EXERCISE 1
+    TODO: Declare a new function type for the sortDescending and sortAscending functions. */
 
-function sum(input: number[]): number {
-  let total = 0;
-  for (let count = 0; count < input.length; count++) {
-    if (isNaN(input[count])) {
-      continue;
-    }
-    total += Number(input[count]);
-  }
-  return total;
-}
+type compareFunctionType = (x: number, y: number) => number;
+/*  TODO: Convert the sortDescending and sortAscending functions to arrow 
+    functions. */
 
-sum([1, 2, 3]);
-
-/** Rest */
-
-let addAllNumbers = (
-  firstNumber: number,
-  ...restOfNumbers: number[]
-): number => {
-  let total: number = firstNumber;
-  for (let counter = 0; counter < restOfNumbers.length; counter++) {
-    if (isNaN(restOfNumbers[counter])) {
-      continue;
-    }
-    total += Number(restOfNumbers[counter]);
-  }
-  return total;
-};
-
-/** Deconstructed object parameters */
-
-interface Message {
-  text: string;
-  sender: string;
-}
-
-function displayMessage({ text, sender }: Message) {
-  console.log(`Message from ${sender}: ${text}`);
-}
-
-displayMessage({ sender: "Chistopher", text: "hello, world" });
-
-let addThreeNumbers = (x: number, y: number, z?: number): number => {
-  return x + y + (z ? z : 0);
-};
-
-/** Type of function */
-
-// type calculator = (x: number, y: number) => number;
-interface Calculator {
-  (x: number, y: number): number;
-}
-
-/** Имена параметров при определении типа не должны совпадать с именами параметров при определении самой функции */
-const addNumbers: Calculator = (x: number, y: number) => x + y;
-const subtractNumbers: Calculator = (x: number, y: number) => x - y;
-
-console.log(addNumbers(1, 2));
-console.log(subtractNumbers(1, 2));
-
-let doCalculation = (operation: "add" | "subtract"): Calculator => {
-  if (operation === "add") {
-    return addNumbers;
+/*  sortDescending is a comparison function that tells the sort method how to sort 
+    numbers in descending order */
+const sortDescending: compareFunctionType = (a, b) => {
+  if (a > b) {
+    return -1;
+  } else if (b > a) {
+    return 1;
   } else {
-    return subtractNumbers;
+    return 0;
   }
 };
+
+/*  sortDescending is a comparison function that tells the sort method how to sort 
+    numbers in ascending order. */
+const sortAscending: compareFunctionType = (a, b) => {
+  if (a > b) {
+    return 1;
+  } else if (b > a) {
+    return -1;
+  } else {
+    return 0;
+  }
+};
+
+/*  The buildArray function builds an array of unique random numbers containing the number 
+    of items based on the number passed to it. The sortOrder parameter determines 
+    whether to sort the array in ascending or descending order. */
+
+/*  TODO: Update the BuildArray function. */
+
+function buildArray(
+  items: number,
+  sortOrder: "ascending" | "descending"
+): number[] {
+  let randomNumbers = [];
+  let nextNumber: number;
+  for (let counter = 0; counter < items; counter++) {
+    nextNumber = Math.ceil(Math.random() * (100 - 1));
+    if (randomNumbers.indexOf(nextNumber) === -1) {
+      randomNumbers.push(nextNumber);
+    } else {
+      counter--;
+    }
+  }
+  if (sortOrder === "ascending") {
+    return randomNumbers.sort(sortAscending);
+  } else {
+    return randomNumbers.sort(sortDescending);
+  }
+}
+
+let myArray1 = buildArray(12, "ascending");
+let myArray2 = buildArray(8, "descending");
+
+/*  EXERCISE 2
+    TODO: Update the LoanCalculator function. */
+
+function loanCalculator(principle: number, interestRate: number, months = 12) {
+  let interest = interestRate / 1200; // Calculates the monthly interest rate
+  let payment;
+  payment = (principle * interest) / (1 - Math.pow(1 / (1 + interest), months));
+  return payment.toFixed(2);
+}
