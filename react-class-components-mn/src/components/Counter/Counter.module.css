@@ -1,0 +1,17 @@
+.counter {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+span {
+  margin: 0 auto;
+}
+
+.counter div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter button {
+  width: 40%;
+}
