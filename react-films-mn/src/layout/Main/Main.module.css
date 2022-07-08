@@ -1,0 +1,12 @@
+.main {
+  max-width: 1280px;
+  min-height: calc(100vh - 70px - 79px);
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.title {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
