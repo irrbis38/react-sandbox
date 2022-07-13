@@ -19,9 +19,3 @@ button {
   transform: translateY(-50%);
   cursor: pointer;
 }
-/* @media (min-width: 767px) {
-  .cart__item {
-    top: 5rem;
-    bottom: unset;
-  }
-} */
