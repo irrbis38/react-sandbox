@@ -1,0 +1,20 @@
+.cart {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 5;
+  cursor: pointer;
+  background-color: #c62828;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 767px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}

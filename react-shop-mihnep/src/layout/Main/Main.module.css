@@ -1,0 +1,7 @@
+.main {
+  max-width: 1280px;
+  min-height: calc(100vh - 70px - 64px);
+  margin: 0 auto;
+  padding: 20px 15px;
+  text-align: center;
+}

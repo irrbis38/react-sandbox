@@ -1,0 +1,19 @@
+.goods__item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px 10px 20px;
+}
+
+.card__content {
+  flex-grow: 1;
+}
+
+.price {
+  font-size: 24px;
+}
+
+.card__title {
+  color: #000 !important;
+  background-color: rgba(255, 255, 255, 0.5);
+}
