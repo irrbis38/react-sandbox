@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-sandbox/react-shop-mihnep/static/css/main.7eabacf2.css",
+    "main.js": "/react-sandbox/react-shop-mihnep/static/js/main.89205b70.js",
+    "index.html": "/react-sandbox/react-shop-mihnep/index.html",
+    "main.7eabacf2.css.map": "/react-sandbox/react-shop-mihnep/static/css/main.7eabacf2.css.map",
+    "main.89205b70.js.map": "/react-sandbox/react-shop-mihnep/static/js/main.89205b70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7eabacf2.css",
+    "static/js/main.89205b70.js"
+  ]
+}
