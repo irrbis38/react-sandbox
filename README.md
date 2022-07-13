@@ -1,3 +1,3 @@
-# react-sandbox
+# React Online Shop Project
 
-Just sandbox for learn React, Redux, TypeScript or etc.
+[Demo](https://irrbis38.github.io/react-sandbox/react-shop-mihnep/)
