@@ -7,12 +7,8 @@ class Car {
             this._doors = doors;
         }
         else {
-            throw new Error("Doors must be an even number");
+            throw new Error('Doors must be an even number');
         }
-        Car.numberOfCars++;
-    }
-    static getNumberOfCars() {
-        return Car.numberOfCars;
     }
     get make() {
         return this._make;
@@ -34,7 +30,7 @@ class Car {
             this._doors = doors;
         }
         else {
-            throw new Error("Doors must be an even number");
+            throw new Error('Doors must be an even number');
         }
     }
     accelerate(speed) {
@@ -50,33 +46,12 @@ class Car {
         return this._make;
     }
 }
-Car.numberOfCars = 0;
-let myCar1 = new Car("Cool car company", "red", 2);
-let myCar2 = new Car("Galaxy Motors", "blue");
-console.log(Car.getNumberOfCars()); // 2
-////////////////////////////////////
-// Расширение класса Car
-class ElectricCar extends Car {
-    constructor(make, color, range, doors = 2) {
-        super(make, color, doors);
-        this._range = range;
-    }
-    get range() {
-        return this._range;
-    }
-    set range(range) {
-        this._range = range;
-    }
-    charge() {
-        console.log(this.worker() + " is charging.");
-    }
-    brake() {
-        return `${this.worker()} is braking with the regenerative breaking system.`;
-    }
-}
-let spark = new ElectricCar("Spark Motors", "silver", 150, 4);
-let eCar = new ElectricCar("Electric Car Co.", "black", 250);
-console.log(eCar.doors);
-spark.charge();
-console.log(Car.getNumberOfCars());
-console.log(eCar.brake());
+let myCar1 = new Car('Cool car company', 'red', 2);
+console.log(myCar1.color);
+console.log(myCar1._color);
+let myCar2 = new Car('Galaxy Motors', 'blue');
+console.log(myCar2.doors);
+// myCar2.doors = 5;
+console.log(myCar2.accelerate(40));
+console.log(myCar2.turn('left'));
+console.log(myCar2.brake());
